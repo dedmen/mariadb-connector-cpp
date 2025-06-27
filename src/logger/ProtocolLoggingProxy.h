@@ -154,6 +154,7 @@ public:
   void reconnect();
   void skipAllResults() override;
   void skipAllResults(ServerPrepareResult* spr) override;
+  void setInitCommand(const SQLString& newCommand) override;
   };
 
 }

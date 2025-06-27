@@ -1121,8 +1121,11 @@ namespace mariadb
   }
 
 
-  sql::Connection* MariaDbConnection::setClientOption(const SQLString& /*name*/, const SQLString& /*value*/) {
-    throw SQLFeatureNotImplementedException("setClientOption support is not implemented yet");
+  sql::Connection* MariaDbConnection::setClientOption(const SQLString& /*name*/, const SQLString& value) {
+    protocol->setInitCommand(value);
+    options->initCommand = value;
+    return nullptr; // Why would this return a connection?
+    //throw SQLFeatureNotImplementedException("setClientOption support is not implemented yet");
   }
 
 

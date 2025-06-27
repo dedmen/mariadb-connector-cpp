@@ -166,6 +166,9 @@ public:
   virtual void reconnect()=0;
   virtual void skipAllResults(ServerPrepareResult* spr)=0;
   virtual void skipAllResults()=0;
+
+  virtual void setInitCommand(const SQLString& newCommand)=0;
+
   /* I guess at some point we will need it */
   //virtual Protocol* clone();
   };

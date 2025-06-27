@@ -613,6 +613,11 @@ namespace mariadb
 	  protocol->changeSocketSoTimeout(setSoTimeout);
 	}
 
+  void ProtocolLoggingProxy::setInitCommand(const SQLString& newCommand)
+  {
+      /* Add here logging if needed */
+      protocol->setInitCommand(newCommand);
+  }
 
   void ProtocolLoggingProxy::removeActiveStreamingResult()
 	{

@@ -1390,6 +1390,11 @@ namespace capi
     mysql_optionsv(connection.get(), MYSQL_OPT_READ_TIMEOUT, (void*)&millis);
   }
 
+  void ConnectProtocol::setInitCommand(const SQLString& newCommand)
+  {
+      mysql_optionsv(connection.get(), MYSQL_INIT_COMMAND, (void*)newCommand.c_str());
+  }
+
   bool ConnectProtocol::isServerMariaDb()
   {
     return serverMariaDb;

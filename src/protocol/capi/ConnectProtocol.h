@@ -248,6 +248,7 @@ namespace capi
     bool sessionStateAware();
     SQLString getTraces();
     void reconnect();
+    void setInitCommand(const SQLString& newCommand);
   };
 } // capi
 } // mariadb
